@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family={fontFamily}:{fontWeight}');
+
+:root {
+  --fontFamily: {fontFamily}, sans-serif;
+  --fontWeight: {fontWeight};
+  
+  --titleFontSize: {titleSize}px;
+  --fontSize: {goalSize}px;
+  --textTransform: {textTransform};
+  --fontWeight: {fontWeight};
+  --titlePosition: {titlePosition};
+  
+  --barFillColor: {barFillColor};
+  --barTextColor: {barTextColor};
+  --barBackColor: {barBackColor};
+  --barRoundness: {barRound}em;
+  --barBorderSize: {barBorderSize}px;
+  --barBorderColor: {barBorderColor};
+}
+
+#textHolder {
+  padding-right: 1em; 
+  padding-left: 1em; 
+  font-family: '{fontFamily}';
+  font-size: var(--titleFontSize);
+  margin-bottom: 10px;
+  text-align: var(--titlePosition);
+  text-transform: var(--textTransform);
+  font-weight: var(--fontWeight);
+}
+
+#progress {
+  float: center;
+  font-family: '{fontFamily}';
+  font-size: var(--fontSize);
+  color: var(--barTextColor);
+  text-transform: var(--textTransform);
+  font-weight: var(--fontWeight);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-end; 
+}
+
+#progress label {
+    align-self: flex-end;
+    height: var(--fontSize);
+    padding: .7em 1em;
+    border-radius: var(--barRoundness);
+    display: flex;
+    align-items: center;
+}
+
+#progress #bar {
+  width: 94%;
+  height: var(--fontSize);
+  background-color: var(--barBackColor);
+  padding: .7em 1em;
+  border-radius: var(--barRoundness);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+  flex-wrap: wrap;
+  border: var(--barBorderSize) var(--barBorderColor) solid;
+}
+
+#progress #bar::before, #progress #bar .loading {
+  content: '';
+  border-radius: var(--barRoundness);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+
+#progress #bar .loading {
+  background-color: var(--barFillColor);
+  min-width: 13%;
+  width: 13%;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: .5s all ease-in-out;
+}
+
+#progress #bar .loading .amount {
+  position: relative;
+  padding-right: 1em; 
+}

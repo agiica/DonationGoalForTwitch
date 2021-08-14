@@ -1,0 +1,127 @@
+{
+  "subtractDonations": {
+    "label": "Previous amount of donations.",
+    "type": "number",
+    "value": 0,
+    "group": "Goal Settings"
+  },
+  "titleText": {
+    "type": "text",
+    "label": "Donation Goal Title",
+    "value": "Donation Goal",
+    "group": "Goal Settings"
+  },
+  "titlePosition": {
+    "type": "dropdown",
+    "group": "Title Settings",
+    "label": "Pick Title position",
+    "value": "Center",
+    "options": {
+      "left": "Left",
+      "center": "Center",
+      "right": "Right"
+    },
+    "group": "Goal Settings"
+  },
+  "amount": {
+    "type": "number",
+    "label": "Donation Amount",
+    "value": 100,
+    "group": "Goal Settings"
+  },
+  "fontFamily": {
+    "label": "Font Family",
+    "type": "googleFont",
+    "value": "Roboto",
+    "group": "Font Settings"
+  },
+  "fontWeight": {
+    "label": "Font Weight",
+    "type": "dropdown",
+    "options": {
+      "100": "Thin (100)",
+      "300": "Light (300)",
+      "400": "Regular (400)",
+      "500": "Medium (500)",
+      "700": "Bold (700)",
+      "900": "Black (900)"
+    },
+    "value": "700",
+    "group": "Font Settings"
+  },
+  "textTransform": {
+    "label": "Text Transform",
+    "type": "dropdown",
+    "options": {
+      "uppercase": "Uppercase",
+      "normal": "Normal"
+    },
+    "value": "normal",
+    "group": "Font Settings"
+  },
+  "titleSize": {
+    "label": "Donation Goal Title Size",
+    "type": "slider",
+    "name": "",
+    "value": 40,
+    "max": 60,
+    "min": 10,
+    "steps": 1,
+    "group": "Font Settings"
+  },
+  "goalSize": {
+    "label": "Donation Goal Font Size",
+    "type": "slider",
+    "name": "",
+    "value": 40,
+    "max": 40,
+    "min": 12,
+    "steps": 1,
+    "group": "Font Settings"
+  },
+  
+  "barBackColor": {
+    "type": "colorpicker",
+    "label": "Bar Background Color",
+    "value": "black",
+    "group": "Bar Settings"
+  },
+  "barFillColor": {
+    "type": "colorpicker",
+    "label": "Bar Fill Color",
+    "value": "blue",
+    "group": "Bar Settings"
+  },
+  "barTextColor": {
+    "type": "colorpicker",
+    "label": "Bar Text Color",
+    "value": "white",
+    "group": "Bar Settings"
+  },
+  "barRound": {
+    "label": "How round the bar ends are",
+    "type": "slider",
+    "name": "",
+    "value": 1.5,
+    "max": 2,
+    "min": 0,
+    "steps": 0.1,
+    "group": "Bar Settings"
+  },
+  "barBorderSize": {
+    "label": "Bar border size",
+    "type": "slider",
+    "name": "",
+    "value": 1,
+    "max": 3,
+    "min": 0,
+    "steps": 0.5,
+    "group": "Bar Settings"
+  },
+  "barBorderColor": {
+    "type": "colorpicker",
+    "label": "Bar Text Color",
+    "value": "white",
+    "group": "Bar Settings"
+  }
+}
