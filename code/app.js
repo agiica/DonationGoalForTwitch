@@ -1,7 +1,9 @@
-var donation = 0;
+var currentState = 0;
 var goal = 0;
-var percent = doPercent( donation );
-var previousDonations;
+var percent = doPercent( currentState );
+var previousValue;
+var eventType;
+var prefix;
 
 // Initialization
 window.addEventListener('onWidgetLoad', function (obj) {
@@ -13,10 +15,27 @@ window.addEventListener('onWidgetLoad', function (obj) {
   
   // Set correct values
   goal = fieldData["amount"];
-  previousDonations = fieldData["subtractDonations"];
-  donation = data["tip-goal"]["amount"] - previousDonations;
-  if (donation <= 0){
-    donation = 0;
+  eventType = fieldData["eventType"];
+  previousValue = fieldData["subtractDonations"];
+  if (eventType == 'tip')
+  {
+    prefix = '$';
+    currentState = data["tip-total"]["amount"] - previousValue;
+  }
+  if (eventType == 'cheer')
+  {
+    prefix = '☆';
+    currentState = data["cheer-total"]["amount"] - previousValue;
+  }
+  if (eventType == 'follower')
+  {
+    prefix = '';
+    currentState = data["follower-total"]["count"] - previousValue;
+  }
+  if (eventType == 'subscriber')
+  {
+    prefix = '';
+    currentState = data["subscriber-total"]["count"] - previousValue;
   }
   
   // Set goal live
@@ -29,20 +48,39 @@ window.addEventListener('onEventReceived', function (obj) {
   const event = obj["detail"]["event"];
 
   if ( listener == 'tip-latest' ) {
-    donation = donation + event["amount"];
+    currentState = currentState + event["amount"];
     reloadGoal();
   }
 });
 
 function reloadGoal() {
-  $('#progress .endgame .amount').text( '$' + goal );
-  percent = doPercent( donation );
-  $('#progress .loading .amount').text( '$' + donation.toFixed(2) );
-  $('#progress .loading').css(
+  $('#progress .endgame .amount').text( prefix + goal );
+  percent = doPercent( currentState );
+  if (percent != 100)
+  {
+    if (eventType == 'tip')
     {
-      'width': percent + '%'
-    });
-  $('#progress #current_goal').text( "0" );
+      $('#progress .loading .amount').text( prefix + currentState.toFixed(2) );
+    }
+    else
+    {
+      $('#progress .loading .amount').text( prefix + currentState );
+    }
+
+    $('#progress .loading').css(
+      {
+        'width': percent + '%'
+      });
+    $('#progress #current_goal').text( "0" );
+  }
+  else
+  {
+    $('#progress .loading').css(
+     {
+       'width': '100%'
+     }); 
+    $('#progress .loading .amount').text( "Goal Completed!" );
+  }
 }
 
 function doPercent( donated ) {

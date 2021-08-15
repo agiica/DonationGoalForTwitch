@@ -1,42 +1,63 @@
 {
+  "eventType": {
+    "type": "dropdown",
+    "label": "Pick event type:",
+    "options": {
+      "follower": "Follower",
+      "subscriber": "Subscriber",
+      "tip": "Tip amount",
+      "cheer": "Bits amount"
+    },
+    "value": "tip",
+    "group": "Goal Settings"
+  },
+  "amount": {
+    "type": "number",
+    "label": "Goal to reach",
+    "value": 100,
+    "group": "Goal Settings"
+  },
   "subtractDonations": {
-    "label": "Previous amount of donations.",
+    "label": "Previous amount to subtract.",
     "type": "number",
     "value": 0,
     "group": "Goal Settings"
   },
   "titleText": {
     "type": "text",
-    "label": "Donation Goal Title",
+    "label": "Goal Title",
     "value": "Donation Goal",
-    "group": "Goal Settings"
+    "group": "Title Settings"
   },
   "titlePosition": {
     "type": "dropdown",
-    "group": "Title Settings",
-    "label": "Pick Title position",
+    "label": "Title position",
     "value": "Center",
     "options": {
       "left": "Left",
       "center": "Center",
       "right": "Right"
     },
-    "group": "Goal Settings"
+    "group": "Title Settings"
   },
-  "amount": {
-    "type": "number",
-    "label": "Donation Amount",
-    "value": 100,
-    "group": "Goal Settings"
+  "titleSize": {
+    "label": "Title - Font Size",
+    "type": "slider",
+    "name": "",
+    "value": 40,
+    "max": 60,
+    "min": 10,
+    "steps": 1,
+    "group": "Title Settings"
   },
-  "fontFamily": {
-    "label": "Font Family",
+  "titleFontFamily": {
+    "label": "Title - Font Family",
     "type": "googleFont",
     "value": "Roboto",
-    "group": "Font Settings"
+    "group": "Title Settings"
   },
-  "fontWeight": {
-    "label": "Font Weight",
+  "titleFontWeight": {
+    "label": "Title - Font Weight",
     "type": "dropdown",
     "options": {
       "100": "Thin (100)",
@@ -47,7 +68,7 @@
       "900": "Black (900)"
     },
     "value": "700",
-    "group": "Font Settings"
+    "group": "Title Settings"
   },
   "textTransform": {
     "label": "Text Transform",
@@ -57,44 +78,69 @@
       "normal": "Normal"
     },
     "value": "normal",
-    "group": "Font Settings"
-  },
-  "titleSize": {
-    "label": "Donation Goal Title Size",
-    "type": "slider",
-    "name": "",
-    "value": 40,
-    "max": 60,
-    "min": 10,
-    "steps": 1,
-    "group": "Font Settings"
+    "group": "Title Settings"
   },
   "goalSize": {
-    "label": "Donation Goal Font Size",
+    "label": "Bar - Font Size",
     "type": "slider",
     "name": "",
     "value": 40,
     "max": 40,
     "min": 12,
     "steps": 1,
-    "group": "Font Settings"
+    "group": "Bar Settings"
   },
-  
+  "barFontFamily": {
+    "label": "Bar - Font Family",
+    "type": "googleFont",
+    "value": "Roboto",
+    "group": "Bar Settings"
+  },
+  "barFontWeight": {
+    "label": "Bar - Font Weight",
+    "type": "dropdown",
+    "options": {
+      "100": "Thin (100)",
+      "300": "Light (300)",
+      "400": "Regular (400)",
+      "500": "Medium (500)",
+      "700": "Bold (700)",
+      "900": "Black (900)"
+    },
+    "value": "700",
+    "group": "Bar Settings"
+  },  
   "barBackColor": {
     "type": "colorpicker",
-    "label": "Bar Background Color",
+    "label": "Bar - Background Color",
     "value": "black",
     "group": "Bar Settings"
   },
   "barFillColor": {
     "type": "colorpicker",
-    "label": "Bar Fill Color",
+    "label": "Bar - Fill Color",
     "value": "blue",
     "group": "Bar Settings"
   },
-  "barTextColor": {
+  "enableRGB": {
+    "label": "Bar - Enable RGB?",
+    "type": "dropdown",
+    "options": {
+      "0": "No",
+      "10": "Yes"
+    },
+    "value": "No",
+    "group": "Bar Settings"
+  },
+  "currentTextColor": {
     "type": "colorpicker",
-    "label": "Bar Text Color",
+    "label": "Current Amount - Text Color",
+    "value": "white",
+    "group": "Bar Settings"
+  },
+  "goalTextColor": {
+    "type": "colorpicker",
+    "label": "Goal Amount - Text Color",
     "value": "white",
     "group": "Bar Settings"
   },
@@ -113,14 +159,14 @@
     "type": "slider",
     "name": "",
     "value": 1,
-    "max": 3,
+    "max": 10,
     "min": 0,
     "steps": 0.5,
     "group": "Bar Settings"
   },
   "barBorderColor": {
     "type": "colorpicker",
-    "label": "Bar Text Color",
+    "label": "Bar Border Color",
     "value": "white",
     "group": "Bar Settings"
   }

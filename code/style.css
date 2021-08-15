@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family={fontFamily}:{fontWeight}');
 
 :root {
-  --fontFamily: {fontFamily}, sans-serif;
-  --fontWeight: {fontWeight};
+  --titleFontFamily: {titleFontFamily}, sans-serif;
+  --barFontFamily: {barFontFamily}, sans-serif;
+  --titleFontWeight: {titleFontWeight};
+  --barFontWeight: {barFontWeight};
   
   --titleFontSize: {titleSize}px;
   --fontSize: {goalSize}px;
@@ -11,31 +13,33 @@
   --titlePosition: {titlePosition};
   
   --barFillColor: {barFillColor};
-  --barTextColor: {barTextColor};
+  --currentTextColor: {currentTextColor};
+  --goalTextColor: {goalTextColor};
   --barBackColor: {barBackColor};
   --barRoundness: {barRound}em;
   --barBorderSize: {barBorderSize}px;
   --barBorderColor: {barBorderColor};
+  --barEnableRGB: {enableRGB}s;
 }
 
 #textHolder {
   padding-right: 1em; 
   padding-left: 1em; 
-  font-family: '{fontFamily}';
+  font-family: '{titleFontFamily}';
   font-size: var(--titleFontSize);
   margin-bottom: 10px;
   text-align: var(--titlePosition);
   text-transform: var(--textTransform);
-  font-weight: var(--fontWeight);
+  font-weight: var(--titleFontWeight);
 }
 
 #progress {
   float: center;
-  font-family: '{fontFamily}';
+  font-family: '{barFontFamily}';
   font-size: var(--fontSize);
-  color: var(--barTextColor);
+  color: var(--currentTextColor);
   text-transform: var(--textTransform);
-  font-weight: var(--fontWeight);
+  font-weight: var(--barFontWeight);
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -76,6 +80,7 @@
   left: 0;
   top: 0;
   z-index: -2;
+  -webkit-animation: hue var(--barEnableRGB) infinite;
 }
 
 #progress #bar .loading {
@@ -89,7 +94,16 @@
   transition: .5s all ease-in-out;
 }
 
+#progress .endgame .amount {
+  color: var(--goalTextColor);
+}
+
 #progress #bar .loading .amount {
   position: relative;
   padding-right: 1em; 
+}
+
+@-webkit-keyframes hue {
+  0%, 100%  { -webkit-filter: hue-rotate(0deg); }
+  50% { -webkit-filter: hue-rotate(360deg); }
 }
