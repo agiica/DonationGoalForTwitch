@@ -79,7 +79,7 @@ function reloadGoal() {
      {
        'width': '100%'
      }); 
-    $('#progress .loading .amount').text( "Goal Completed!" );
+    $('#progress .loading .amount').text( "★ Goal Completed!" );
   }
 }
 
