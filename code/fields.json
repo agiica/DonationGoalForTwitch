@@ -40,6 +40,12 @@
     },
     "group": "Title Settings"
   },
+  "titleColor": {
+    "type": "colorpicker",
+    "label": "Title - Font Color",
+    "value": "black",
+    "group": "Title Settings"
+  },
   "titleSize": {
     "label": "Title - Font Size",
     "type": "slider",
